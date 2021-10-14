@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Montserrat, sans-serif;
 }
 
@@ -80,7 +81,7 @@ main {
     padding: 30px;
     margin: 100px auto;
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
 }
 
 #valor {
