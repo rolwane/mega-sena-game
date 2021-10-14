@@ -10,7 +10,7 @@ header {
     background-image: url('../images/bg-header.jpg');
     background-size: cover;
     padding: 50px 30px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 header h1 {
@@ -21,6 +21,16 @@ header h1 {
 
 main {
     padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.qnt-numbers {
+    text-align: center;
 }
 
 .h2-title {
@@ -50,7 +60,8 @@ main {
 }
 
 .container-labels {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 50px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
-
