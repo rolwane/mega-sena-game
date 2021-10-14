@@ -33,11 +33,14 @@ main {
     text-align: center;
 }
 
+.qnt-numbers form input[type=radio] {
+    display: none;
+}
+
 .h2-title {
     color: rgb(0, 102, 179);
     font-weight: 800;
     font-size: 25px;
-    margin-bottom: 50px;
 }
 
 .label-radio {
@@ -64,4 +67,5 @@ main {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    margin-top: 50px;
 }
