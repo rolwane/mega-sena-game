@@ -27,11 +27,6 @@
         <h2 class="h2-title">Quantos números você deseja apostar?</h2>
 
         <div class="container-labels">
-          <label for="n_01" class="label-radio" id="n_01_label">01</label>
-          <label for="n_02" class="label-radio" id="n_02_label">02</label>
-          <label for="n_03" class="label-radio" id="n_03_label">03</label>
-          <label for="n_04" class="label-radio" id="n_04_label">04</label>
-          <label for="n_05" class="label-radio" id="n_05_label">05</label>
           <label for="n_06" class="label-radio" id="n_06_label">06</label>
           <label for="n_07" class="label-radio" id="n_07_label">07</label>
           <label for="n_08" class="label-radio" id="n_08_label">08</label>
@@ -45,12 +40,7 @@
         </div> <!-- fim container labels -->
         
         <form action="">
-          <input type="radio" name="qnt-number" value="01" id="n_01" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="02" id="n_02" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="03" id="n_03" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="04" id="n_04" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="05" id="n_05" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="06" id="n_06" onchange="check(this.id, this.value)">
+          <input type="radio" name="qnt-number" value="06" id="n_06" onchange="check(this.id, this.value)" checked>
           <input type="radio" name="qnt-number" value="07" id="n_07" onchange="check(this.id, this.value)">
           <input type="radio" name="qnt-number" value="08" id="n_08" onchange="check(this.id, this.value)">
           <input type="radio" name="qnt-number" value="09" id="n_09" onchange="check(this.id, this.value)">
@@ -62,18 +52,21 @@
           <input type="radio" name="qnt-number" value="15" id="n_15" onchange="check(this.id, this.value)">
         </form>
 
+      </section>
 
+      <section class="valor-aposta">
+
+        <h2 class="h2-title">Valor da aposta:</h2>
+
+        <span id="valor">R$ 4,50</span>
+        
+        <small>Valores tirados do site <a href="http://loterias.caixa.gov.br/wps/portal/loterias/landing/megasena" target="_blank">Loterias - Caixa</a></small>
 
       </section>
 
     </div> <!-- fim container -->
 
   </main>
-
-
-
-
-
 
   <script src="./js/scripts.js"></script>
 

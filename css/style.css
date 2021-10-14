@@ -23,6 +23,12 @@ main {
     padding: 30px;
 }
 
+.h2-title {
+    color: rgb(0, 102, 179);
+    font-weight: 800;
+    font-size: 25px;
+}
+
 .container {
     width: 100%;
     max-width: 1280px;
@@ -35,12 +41,6 @@ main {
 
 .qnt-numbers form input[type=radio] {
     display: none;
-}
-
-.h2-title {
-    color: rgb(0, 102, 179);
-    font-weight: 800;
-    font-size: 25px;
 }
 
 .label-radio {
@@ -58,6 +58,10 @@ main {
     font-size: 18px;
 }
 
+.label-radio:nth-child(1) {
+    background-color: rgb(32, 152, 105);
+}
+
 .label-radio:hover {
     background-color: rgb(32, 152, 105);
 }
@@ -68,4 +72,33 @@ main {
     gap: 20px;
     justify-content: center;
     margin-top: 50px;
+}
+
+.valor-aposta {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 100px auto;
+    width: 100%;
+    max-width: 280px;
+}
+
+#valor {
+    font-size: 30px;
+    display: block;
+    margin-top: 20px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.valor-aposta small {
+    font-size: 11px;
+    margin-top: 30px;
+    display: block;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.valor-aposta small a {
+    color: rgb(0, 102, 179);
 }
