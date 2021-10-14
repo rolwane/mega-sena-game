@@ -5,11 +5,10 @@ function check(id, value) {
     let valorAposta = document.querySelector('#valor');
 
     for (i = 0; i < todasLabels.length; i++) {
-        todasLabels[i].style.background = 'rgb(173, 192, 196)';
+        todasLabels[i].classList.remove('label-active');
     }
 
-    clickedLabel.style.background = 'rgb(32, 152, 105)';
-
+    clickedLabel.classList.add('label-active');
 
     switch ( value ) {
 

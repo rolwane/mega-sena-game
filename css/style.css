@@ -58,11 +58,11 @@ main {
     font-size: 18px;
 }
 
-.label-radio:nth-child(1) {
+.label-radio:hover {
     background-color: rgb(32, 152, 105);
 }
 
-.label-radio:hover {
+.label-active{
     background-color: rgb(32, 152, 105);
 }
 
