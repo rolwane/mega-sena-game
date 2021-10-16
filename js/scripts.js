@@ -1,7 +1,9 @@
 function check(id, value) {
 
-    let todasLabels = document.querySelectorAll('.label-radio');
+    let todasLabels = document.querySelectorAll('.lb-radio');
+
     let clickedLabel = document.querySelector('#'+id+'_label');
+
     let valorAposta = document.querySelector('#valor');
 
     for (i = 0; i < todasLabels.length; i++) {
@@ -53,5 +55,55 @@ function check(id, value) {
             break;
     }
 
+}
+
+
+let cont = 0;
+
+function choice(id, value) {
+    
+    let clickedLabel = document.querySelector('#'+id+'_label');
+
+    let allChecks = document.querySelectorAll('.checkbox');
+
+    let qntNumbers = document.querySelector('input[name="qnt-number"]:checked').value;
+
+    if( clickedLabel.classList.contains('label-active') ) {
+
+        clickedLabel.classList.remove('label-active');
+
+        for (i = 0; i < allChecks.length; i++) {
+
+            allChecks[i].disabled = false
+
+        }
+
+        cont--
+
+    }else {
+
+        if ( cont < qntNumbers ) {
+
+            clickedLabel.classList.add('label-active');
+
+            cont++
+
+        }
+
+    }
+
+    if( cont == qntNumbers ) {
+
+        for ( i = 0; i < allChecks.length; i++ ) {
+
+            if( !allChecks[i].checked ) {
+
+                allChecks[i].disabled = true;
+
+            }
+
+        }
+
+    }
 
 }
