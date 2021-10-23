@@ -1,130 +1,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
 }
 
 header {
-    background-image: url('../images/bg-header.jpg');
-    background-size: cover;
-    padding: 50px 30px;
-    margin-bottom: 50px;
+  background-image: url('../images/bg-header.jpg');
+  background-size: cover;
+  padding: 50px 30px;
+  margin-bottom: 50px;
 }
 
 header h1 {
-    color: rgb(255, 255, 255);
-    font-size: 60px;
-    font-weight: 800;
+  color: rgb(255, 255, 255);
+  font-size: 60px;
+  font-weight: 800;
 }
 
 main {
-    padding: 30px;
-}
-
-.h2-title {
-    color: rgb(0, 102, 179);
-    font-weight: 800;
-    font-size: 25px;
+  padding: 30px;
 }
 
 .container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.qnt-numbers, .myNumbers {
-    text-align: center;
+.h2-title {
+  color: rgb(0, 102, 179);
+  font-weight: 800;
+  font-size: 25px;
 }
 
-.qnt-numbers form input[type=radio] {
-    display: none;
+.hidden {
+  display: none;
+}
+
+.qnt-numbers {
+  text-align: center;
 }
 
 .label {
-    background-color: rgb(173, 192, 196);
-    width: 50px;
-    height: 50px;
-    display: block;
-    border-radius: 50%;
-    font-weight: 800;
-    color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 18px;
+  background-color: rgb(173, 192, 196);
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 50%;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 .label:hover {
-    background-color: rgb(32, 152, 105);
+  background-color: rgb(32, 152, 105);
 }
 
 .label-active{
-    background-color: rgb(32, 152, 105);
+  background-color: rgb(32, 152, 105);
 }
 
 .container-labels {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .valor-aposta {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 30px;
-    margin: 100px auto;
-    width: 100%;
-    max-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 100px auto;
+  width: 100%;
+  max-width: 300px;
 }
 
 #valor {
-    font-size: 30px;
-    display: block;
-    margin-top: 20px;
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.6);
+  font-size: 30px;
+  display: block;
+  margin-top: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .valor-aposta small {
-    font-size: 11px;
-    margin-top: 30px;
-    display: block;
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.5);
+  font-size: 11px;
+  margin-top: 30px;
+  display: block;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .valor-aposta small a {
-    color: rgb(0, 102, 179);
+  color: rgb(0, 102, 179);
 }
 
 #btn-next {
-    width: 100%;
-    padding: 15px;
-    border-radius: 100px;
-    border: none;
-    background-color: rgb(0, 102, 179);
-    color: rgb(255, 255, 255);
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 50px;
-}
-
-#btn-next:hover {
-    background-color: rgb(0, 90, 160);
-}
-
-#container-next {
-    display: none;
-}
-
-form input[type=checkbox] {
-    display: none;
+  width: 100%;
+  padding: 15px;
+  border-radius: 100px;
+  border: none;
+  background-color: rgb(0, 102, 179);
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 50px;
 }

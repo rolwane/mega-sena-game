@@ -11,202 +11,31 @@
   <title>Mega-Sena Game!</title>
 </head>
 <body>
-    
+  
   <header>
     <div class="container">
-      <h1>Mega-Sena</h1>
+    <h1>Mega-Sena</h1>
     </div>
   </header>
 
   <main>
-
     <div class="container" id="container-home">
 
-      <section class="qnt-numbers">
-
-        <h2 class="h2-title">Quantos números você deseja apostar?</h2>
-
-        <div class="container-labels">
-          <label for="n_06" class="label lb-radio label-active" id="n_06_label">06</label>
-          <label for="n_07" class="label lb-radio" id="n_07_label">07</label>
-          <label for="n_08" class="label lb-radio" id="n_08_label">08</label>
-          <label for="n_09" class="label lb-radio" id="n_09_label">09</label>
-          <label for="n_10" class="label lb-radio" id="n_10_label">10</label>
-          <label for="n_11" class="label lb-radio" id="n_11_label">11</label>
-          <label for="n_12" class="label lb-radio" id="n_12_label">12</label>
-          <label for="n_13" class="label lb-radio" id="n_13_label">13</label>
-          <label for="n_14" class="label lb-radio" id="n_14_label">14</label>
-          <label for="n_15" class="label lb-radio" id="n_15_label">15</label>
-        </div> <!-- fim container labels -->
-        
-        <form>
-          <input type="radio" name="qnt-number" value="06" id="n_06" onchange="check(this.id, this.value)" checked>
-          <input type="radio" name="qnt-number" value="07" id="n_07" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="08" id="n_08" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="09" id="n_09" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="10" id="n_10" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="11" id="n_11" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="12" id="n_12" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="13" id="n_13" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="14" id="n_14" onchange="check(this.id, this.value)">
-          <input type="radio" name="qnt-number" value="15" id="n_15" onchange="check(this.id, this.value)">
-        </form>
-
-      </section>
-
-      <section class="valor-aposta">
-
-        <h2 class="h2-title">Valor da aposta:</h2>
-
-        <span id="valor">R$ 4,50</span>
-        
-        <button id="btn-next" onclick="btnNext()">Continuar</button>
-
-        <small>Valores tirados do site <a href="http://loterias.caixa.gov.br/wps/portal/loterias/landing/megasena" target="_blank">Loterias - Caixa</a></small>
-
-      </section>
+    <section class="qnt-numbers">
+      <h2 class="h2-title">Quantos números você deseja apostar?</h2>
+      <div class="container-labels"></div>
+    </section>
+    
+    <section class="valor-aposta">
+      <h2 class="h2-title">Valor da aposta:</h2>
+      <span id="valor">R$ 4,50</span>
+      <button id="btn-next">Continuar</button>
+      <small>Valores tirados do site <a href="http://loterias.caixa.gov.br/wps/portal/loterias/landing/megasena" target="_blank">Loterias - Caixa</a></small>
+    </section>
 
     </div> <!-- fim container home -->
-
-
-    <div class="container" id="container-next">
-
-      <section class="myNumbers">
-
-        <h2 class="h2-title">Escolha seus números:</h2>
-
-        <div class="container-labels">
-          <label for="cn_01" class="label" id="cn_01_label">01</label>
-          <label for="cn_02" class="label" id="cn_02_label">02</label>
-          <label for="cn_03" class="label" id="cn_03_label">03</label>
-          <label for="cn_04" class="label" id="cn_04_label">04</label>
-          <label for="cn_05" class="label" id="cn_05_label">05</label>
-          <label for="cn_06" class="label" id="cn_06_label">06</label>
-          <label for="cn_07" class="label" id="cn_07_label">07</label>
-          <label for="cn_08" class="label" id="cn_08_label">08</label>
-          <label for="cn_09" class="label" id="cn_09_label">09</label>
-          <label for="cn_10" class="label" id="cn_10_label">10</label>
-          <label for="cn_11" class="label" id="cn_11_label">11</label>
-          <label for="cn_12" class="label" id="cn_12_label">12</label>
-          <label for="cn_13" class="label" id="cn_13_label">13</label>
-          <label for="cn_14" class="label" id="cn_14_label">14</label>
-          <label for="cn_15" class="label" id="cn_15_label">15</label>
-          <label for="cn_16" class="label" id="cn_16_label">16</label>
-          <label for="cn_17" class="label" id="cn_17_label">17</label>
-          <label for="cn_18" class="label" id="cn_18_label">18</label>
-          <label for="cn_19" class="label" id="cn_19_label">19</label>
-          <label for="cn_20" class="label" id="cn_20_label">20</label>
-          <label for="cn_21" class="label" id="cn_21_label">21</label>
-          <label for="cn_22" class="label" id="cn_22_label">22</label>
-          <label for="cn_23" class="label" id="cn_23_label">23</label>
-          <label for="cn_24" class="label" id="cn_24_label">24</label>
-          <label for="cn_25" class="label" id="cn_25_label">25</label>
-          <label for="cn_26" class="label" id="cn_26_label">26</label>
-          <label for="cn_27" class="label" id="cn_27_label">27</label>
-          <label for="cn_28" class="label" id="cn_28_label">28</label>
-          <label for="cn_29" class="label" id="cn_29_label">29</label>
-          <label for="cn_30" class="label" id="cn_30_label">30</label>
-          <label for="cn_31" class="label" id="cn_31_label">31</label>
-          <label for="cn_32" class="label" id="cn_32_label">32</label>
-          <label for="cn_33" class="label" id="cn_33_label">33</label>
-          <label for="cn_34" class="label" id="cn_34_label">34</label>
-          <label for="cn_35" class="label" id="cn_35_label">35</label>
-          <label for="cn_36" class="label" id="cn_36_label">36</label>
-          <label for="cn_37" class="label" id="cn_37_label">37</label>
-          <label for="cn_38" class="label" id="cn_38_label">38</label>
-          <label for="cn_39" class="label" id="cn_39_label">39</label>
-          <label for="cn_40" class="label" id="cn_40_label">40</label>
-          <label for="cn_41" class="label" id="cn_41_label">41</label>
-          <label for="cn_42" class="label" id="cn_42_label">42</label>
-          <label for="cn_43" class="label" id="cn_43_label">43</label>
-          <label for="cn_44" class="label" id="cn_44_label">44</label>
-          <label for="cn_45" class="label" id="cn_45_label">45</label>
-          <label for="cn_46" class="label" id="cn_46_label">46</label>
-          <label for="cn_47" class="label" id="cn_47_label">47</label>
-          <label for="cn_48" class="label" id="cn_48_label">48</label>
-          <label for="cn_49" class="label" id="cn_49_label">49</label>
-          <label for="cn_50" class="label" id="cn_50_label">50</label>
-          <label for="cn_51" class="label" id="cn_51_label">51</label>
-          <label for="cn_52" class="label" id="cn_52_label">52</label>
-          <label for="cn_53" class="label" id="cn_53_label">53</label>
-          <label for="cn_54" class="label" id="cn_54_label">54</label>
-          <label for="cn_55" class="label" id="cn_55_label">55</label>
-          <label for="cn_56" class="label" id="cn_56_label">56</label>
-          <label for="cn_57" class="label" id="cn_57_label">57</label>
-          <label for="cn_58" class="label" id="cn_58_label">58</label>
-          <label for="cn_59" class="label" id="cn_59_label">59</label>
-          <label for="cn_60" class="label" id="cn_60_label">60</label>
-        </div> <!-- fim container labels -->
-
-        <form>
-          <input type="checkbox" name="chosenNumbers" id="cn_01" class="checkbox" value="01" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_02" class="checkbox" value="02" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_03" class="checkbox" value="03" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_04" class="checkbox" value="04" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_05" class="checkbox" value="05" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_06" class="checkbox" value="06" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_07" class="checkbox" value="07" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_08" class="checkbox" value="08" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_09" class="checkbox" value="09" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_10" class="checkbox" value="10" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_11" class="checkbox" value="11" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_12" class="checkbox" value="12" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_13" class="checkbox" value="13" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_14" class="checkbox" value="14" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_15" class="checkbox" value="15" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_16" class="checkbox" value="16" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_17" class="checkbox" value="17" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_18" class="checkbox" value="18" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_19" class="checkbox" value="19" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_20" class="checkbox" value="20" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_21" class="checkbox" value="21" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_22" class="checkbox" value="22" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_23" class="checkbox" value="23" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_24" class="checkbox" value="24" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_25" class="checkbox" value="25" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_26" class="checkbox" value="26" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_27" class="checkbox" value="27" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_28" class="checkbox" value="28" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_29" class="checkbox" value="29" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_30" class="checkbox" value="30" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_31" class="checkbox" value="31" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_32" class="checkbox" value="32" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_33" class="checkbox" value="33" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_34" class="checkbox" value="34" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_35" class="checkbox" value="35" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_36" class="checkbox" value="36" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_37" class="checkbox" value="37" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_38" class="checkbox" value="38" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_39" class="checkbox" value="39" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_40" class="checkbox" value="40" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_41" class="checkbox" value="41" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_42" class="checkbox" value="42" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_43" class="checkbox" value="43" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_44" class="checkbox" value="44" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_45" class="checkbox" value="45" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_46" class="checkbox" value="46" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_47" class="checkbox" value="47" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_48" class="checkbox" value="48" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_49" class="checkbox" value="49" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_50" class="checkbox" value="50" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_51" class="checkbox" value="51" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_52" class="checkbox" value="52" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_53" class="checkbox" value="53" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_54" class="checkbox" value="54" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_55" class="checkbox" value="55" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_56" class="checkbox" value="56" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_57" class="checkbox" value="57" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_58" class="checkbox" value="58" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_59" class="checkbox" value="59" onchange="(choice(this.id, this.value))">
-          <input type="checkbox" name="chosenNumbers" id="cn_60" class="checkbox" value="60" onchange="(choice(this.id, this.value))">
-        </form>
-
-      </section>
-    </div>
-
-  </main>
+  </main> <!-- fim main -->
 
   <script src="./js/scripts.js"></script>
-
 </body>
 </html>
