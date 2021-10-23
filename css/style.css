@@ -124,3 +124,11 @@ main {
 #btn-next:hover {
   background-color: rgb(0, 93, 163);
 }
+
+#restantes {
+  font-size: 16px;
+  margin-top: 10px;
+  display: block;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+}

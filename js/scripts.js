@@ -92,12 +92,12 @@ let todasLabels = document.querySelectorAll('.radio-label');
 todasLabels[0].click(); // dispara um click na primeira label para o input já vir marcado.
 
 
-
 let marcados = 0;
 
 function changeCheckbox(e) {
 
   let quantity = document.querySelector('input[name="qnt-numbers"]:checked').value;
+  let restantes = document.querySelector('#restantes');
 
   let check = e.target;
   for (const label of checkLabels) {
@@ -107,6 +107,7 @@ function changeCheckbox(e) {
       if (label.classList.contains('label-active')) {
         label.classList.remove('label-active');
         marcados--;
+        restantes.innerText = `${quantity - marcados} restantes`;
 
         if (marcados == quantity - 1) {
           for (const checkbox of allCheckbox) {
@@ -119,6 +120,7 @@ function changeCheckbox(e) {
       } else if (marcados < quantity){
         label.classList.add('label-active');
         marcados++;
+        restantes.innerText = `${quantity - marcados} restantes`;
       }
 
       if (marcados == quantity) {
@@ -139,6 +141,8 @@ let checkLabels = document.querySelectorAll('.check-label');
 let allCheckbox = document.querySelectorAll('input[name="choose-numbers"]');
 
 document.querySelector('#btn-next').addEventListener('click', function() {
+  let quantity = document.querySelector('input[name="qnt-numbers"]:checked').value;
   document.querySelector('#container-home').classList.add('hidden');
   document.querySelector('#container-bet').classList.remove('hidden');
+  document.querySelector('#restantes').innerText = `${quantity} restantes`;
 });
