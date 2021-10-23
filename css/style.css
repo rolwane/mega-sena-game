@@ -40,6 +40,10 @@ main {
   display: none;
 }
 
+.show {
+  display: block;
+}
+
 .qnt-numbers {
   text-align: center;
 }
@@ -67,7 +71,7 @@ main {
   background-color: rgb(32, 152, 105);
 }
 
-.container-labels {
+.container-labels, .choose-numbers {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -115,4 +119,8 @@ main {
   font-size: 16px;
   cursor: pointer;
   margin-top: 50px;
+}
+
+#btn-next:hover {
+  background-color: rgb(0, 93, 163);
 }

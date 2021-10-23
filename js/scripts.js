@@ -1,16 +1,17 @@
 
-function labelGenerator(quantity, start, preFor, where) {
+function labelGenerator(quantity, start, preFor, className, where) {
   const dad = document.querySelector(where); // onde vou por as labels
   for (i = start; i < quantity + start; i++) {
     let label = document.createElement('label');
     label.classList.add('label');
+    label.classList.add(className);
     label.setAttribute('for', preFor + i);
     label.innerText = i < 10 ? '0' + i : i;
     dad.appendChild(label);
   }
 }
 
-function inputGenerator(type, quantity, start, preId, name, where) {
+function inputGenerator(type, quantity, start, preId, name, where, func) {
   const dad = document.querySelector(where); // onde vou por os inputs
   for (i = start; i < quantity + start; i++) {
     let input = document.createElement('input');
@@ -19,7 +20,7 @@ function inputGenerator(type, quantity, start, preId, name, where) {
     input.setAttribute('id', preId + i);
     input.setAttribute('value', i);
     input.classList.add('hidden');
-    input.addEventListener('change', changeRadio);
+    input.addEventListener('change', func);
     dad.appendChild(input);
   }
 }
@@ -82,11 +83,62 @@ function changeRadio(e) {
     default:
       break;
   }
-
 }
 
-labelGenerator(10, 6, 'radio-', '.container-labels');
-inputGenerator('radio', 10, 6, 'radio-', 'qnt-numbers', '.container-labels');
+labelGenerator(10, 6, 'radio-', 'radio-label','.container-labels');
+inputGenerator('radio', 10, 6, 'radio-', 'qnt-numbers', '.container-labels', changeRadio);
 
-let todasLabels = document.querySelectorAll('.label');
+let todasLabels = document.querySelectorAll('.radio-label');
 todasLabels[0].click(); // dispara um click na primeira label para o input já vir marcado.
+
+
+
+let marcados = 0;
+
+function changeCheckbox(e) {
+
+  let quantity = document.querySelector('input[name="qnt-numbers"]:checked').value;
+
+  let check = e.target;
+  for (const label of checkLabels) {
+
+    if (label.getAttribute('for') == check.id) {     
+
+      if (label.classList.contains('label-active')) {
+        label.classList.remove('label-active');
+        marcados--;
+
+        if (marcados == quantity - 1) {
+          for (const checkbox of allCheckbox) {
+            if(!checkbox.checked) {
+              checkbox.removeAttribute('disabled');
+            }
+          }
+        }
+
+      } else if (marcados < quantity){
+        label.classList.add('label-active');
+        marcados++;
+      }
+
+      if (marcados == quantity) {
+        for (const checkbox of allCheckbox) {
+          if(!checkbox.checked) {
+            checkbox.setAttribute('disabled', '');
+          }
+        }
+      }
+    }
+  }
+}
+
+labelGenerator(60, 1, 'check-', 'check-label','.choose-numbers');
+inputGenerator('checkbox', 60, 1, 'check-', 'choose-numbers', '.choose-numbers', changeCheckbox);
+
+let checkLabels = document.querySelectorAll('.check-label');
+let allCheckbox = document.querySelectorAll('input[name="choose-numbers"]');
+
+document.querySelector('#btn-next').addEventListener('click', function() {
+  document.querySelector('#container-home').classList.add('hidden');
+  document.querySelector('#container-bet').classList.remove('hidden');
+});
