@@ -30,10 +30,22 @@ main {
   margin: 0 auto;
 }
 
+.h1-title {
+  color: rgb(0, 102, 179);
+  font-weight: 800;
+  font-size: 40px;
+}
+
 .h2-title {
   color: rgb(0, 102, 179);
   font-weight: 800;
   font-size: 25px;
+}
+
+.description {
+  color: #4c556c;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .hidden {
@@ -44,11 +56,15 @@ main {
   display: block;
 }
 
+.center {
+  text-align: center;
+}
+
 .qnt-numbers {
   text-align: center;
 }
 
-.label {
+.label, .label-static {
   background-color: rgb(173, 192, 196);
   width: 50px;
   height: 50px;
@@ -195,7 +211,7 @@ main {
   padding: 20px;
 }
 
-.confirm-labels {
+.confirm-labels, #numeros-sorteados, #seus-numeros {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -234,4 +250,16 @@ main {
 
 #btn-cancelar:hover, #btn-voltar:hover {
   background-color: rgb(155, 172, 176);
+}
+
+#pontos {
+  margin-top: 70px;
+}
+
+#btn-reload {
+  max-width: 250px;
+  background-color: rgb(0, 102, 179);
+  margin: 0 auto;
+  display: block;
+  margin-top: 100px;
 }

@@ -42,26 +42,34 @@
         <button id="btn-bet" class="btn-disabled" disabled="">Continuar</button>
       </section>
     </div>
+
+    <div class="overlay hidden"></div>
+    <div class="confirmation hidden">
+      <section class="box-confirmation">
+        <h2 class="h2-title">Seus números:</h2>
+        <div class="confirm-labels">
+        </div> <!-- fim confirm labels -->
+        <div class="buttons">
+          <button class="btn-action" id="btn-cancelar">Cancelar</button>
+          <button class="btn-action" id="btn-play">Confirmar aposta</button>
+        </div>
+      </section>
+    </div> <!-- fim confirmation -->
+
+    <section id="resultado" class="hidden">
+      <h2 class="h2-title center">Resultado:</h2>
+      <section id="numeros-sorteados" style="margin-top: 20px;"></section>
+      <br>
+      <section id="seus-numeros"></section>
+      <section id="pontos">
+        <h1 class="h1-title center title-resultado"></h1><br>
+        <p class="description center description-resultado"></p>
+      </section>
+
+      <button class="btn-action" id="btn-reload">Tentar novamente!</button>
+    </section>
+
   </main> <!-- fim main -->
-
-  <div class="overlay hidden"></div>
-
-  <div class="confirmation hidden">
-    <div class="box-confirmation">
-
-      <h2 class="h2-title">Seus números:</h2>
-      <div class="confirm-labels">
-
-      </div> <!-- fim confirm labels -->
-
-      <div class="buttons">
-        <button class="btn-action" id="btn-cancelar">Cancelar</button>
-        <button class="btn-action" id="btn-play">Confirmar aposta</button>
-      </div>
-
-    </div>
-  </div> <!-- fim confirmation -->
-  
 
   <script src="./js/scripts.js"></script>
 </body>

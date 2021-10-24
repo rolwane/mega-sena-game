@@ -186,7 +186,6 @@ document.querySelector('#btn-next').addEventListener('click', function() {
   verificaQuantidade();
 });
 
-
 document.querySelector('#btn-bet').addEventListener('click', function() {
   
   let overlay = document.querySelector('.overlay');
@@ -195,8 +194,8 @@ document.querySelector('#btn-bet').addEventListener('click', function() {
 
   confirmLabels.innerHTML = '';
 
-  overlay.classList.add('show');
-  confirmation.classList.add('show');
+  overlay.classList.remove('hidden');
+  confirmation.classList.remove('hidden');
 
   for (const checkbox of allCheckbox) {
     
@@ -222,3 +221,91 @@ document.querySelector('#btn-voltar').addEventListener('click', function() {
   document.querySelector('#container-bet').classList.add('hidden');
   document.querySelector('#container-home').classList.remove('hidden');
 })
+
+
+function sorteio() {
+  let numerosSorteados = [];
+  let cont = 0;
+  while (cont < 6) {
+    let n = Math.floor(Math.random() * 60 + 1);
+    let i = 0;
+    if (numerosSorteados.length > 0) {
+      for (const numero of numerosSorteados) {
+        if (n === numero) {
+          i++;
+        }
+      }
+      if (i === 0) {
+        numerosSorteados.push(n);
+      } else {
+        cont--;
+      }
+    } else {
+      numerosSorteados.push(n);
+    }
+    cont++
+  }
+  return numerosSorteados;
+}
+
+function resultado() {
+  let numerosSorteados = sorteio();
+  let seusNumeros = document.querySelector('#seus-numeros');
+  let titleResultado = document.querySelector('.title-resultado');
+  let descriptionResultado = document.querySelector('.description-resultado');
+  let cont = 0;
+
+  document.querySelector('#container-bet').classList.add('hidden');
+  document.querySelector('.confirmation').classList.add('hidden');
+  document.querySelector('.overlay').classList.add('hidden');
+  document.querySelector('#resultado').classList.remove('hidden');
+  
+
+  for (const na of numerosSorteados) {
+    let label = document.createElement('label');
+    label.classList.add('label');
+    label.classList.add('label-active');
+    label.innerText = na < 10 ? '0' + na : na;
+    document.querySelector('#numeros-sorteados').appendChild(label);
+  }
+
+  for (const checkbox of allCheckbox) {
+    if (checkbox.checked) {
+      let mylabel = document.createElement('label');
+      mylabel.classList.add('label-static');
+      mylabel.innerText = checkbox.value < 10 ? '0' + checkbox.value : checkbox.value;
+
+      for (const numeroSorteado of numerosSorteados) {
+        if (numeroSorteado == checkbox.value) {
+          mylabel.classList.add('label-active');
+          cont++;
+        }
+      }
+      seusNumeros.appendChild(mylabel);
+    }
+  }
+
+  if (cont > 3) {
+    titleResultado.innerText = 'Parabéns! :D';
+    if (cont === 4 || cont === 5) {
+      descriptionResultado.innerHTML = `Você acertou ${cont} números e o seu prêmio é de <strong>R$ 9.500.000,00</strong>`;
+    } else {
+      descriptionResultado.innerHTML = `Você acertou ${cont} números e o seu prêmio é de <strong>R$ 50.000.000,00</strong>`;
+    }
+  } else {
+    titleResultado.innerText = 'Não foi dessa vez! :(';
+    if (cont === 0) {
+      descriptionResultado.innerText = `Você não acertou nenhum número.`;
+    } else if (cont === 1) {
+      descriptionResultado.innerText = `Você acertou 1 número, mas ainda não foi o suficiente.`;
+    } else {
+      descriptionResultado.innerText = `Você acertou ${cont} números, mas ainda não foi o suficiente.`;
+    }
+  }
+}
+
+document.querySelector('#btn-play').addEventListener('click', resultado);
+
+document.querySelector('#btn-reload').addEventListener('click', function() {
+  document.location.reload(true);
+});
