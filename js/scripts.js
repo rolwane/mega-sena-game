@@ -153,6 +153,25 @@ function enableButton(checker) {
   }
 }
 
+function verificaQuantidade() {
+  let quantity = document.querySelector('input[name="qnt-numbers"]:checked').value;
+  let button = document.querySelector('#btn-bet');
+  if ((quantity - marcados) < 0) {
+    button.setAttribute('disabled', '');
+    button.classList.remove('btn-enabled');
+    button.classList.add('btn-disabled');
+  } else if(quantity > marcados){
+    button.setAttribute('disabled', '');
+    button.classList.remove('btn-enabled');
+    button.classList.add('btn-disabled');
+    for (const checkbox of allCheckbox) {
+      if(!checkbox.checked) {
+        checkbox.removeAttribute('disabled');
+      }
+    }
+  }
+}
+
 labelGenerator(60, 1, 'check-', 'check-label','.choose-numbers');
 inputGenerator('checkbox', 60, 1, 'check-', 'choose-numbers', '.choose-numbers', changeCheckbox);
 
@@ -163,7 +182,8 @@ document.querySelector('#btn-next').addEventListener('click', function() {
   let quantity = document.querySelector('input[name="qnt-numbers"]:checked').value;
   document.querySelector('#container-home').classList.add('hidden');
   document.querySelector('#container-bet').classList.remove('hidden');
-  document.querySelector('#restantes').innerText = `${quantity} restantes`;
+  document.querySelector('#restantes').innerText = `${quantity - marcados} restantes`;
+  verificaQuantidade();
 });
 
 
@@ -196,4 +216,9 @@ document.querySelector('#btn-cancelar').addEventListener('click', function() {
   document.querySelector('.overlay').classList.add('hidden');
   document.querySelector('.confirmation').classList.remove('show');
   document.querySelector('.confirmation').classList.add('hidden');
+})
+
+document.querySelector('#btn-voltar').addEventListener('click', function() {
+  document.querySelector('#container-bet').classList.add('hidden');
+  document.querySelector('#container-home').classList.remove('hidden');
 })
