@@ -168,5 +168,32 @@ document.querySelector('#btn-next').addEventListener('click', function() {
 
 
 document.querySelector('#btn-bet').addEventListener('click', function() {
-  alert('teste');
+  
+  let overlay = document.querySelector('.overlay');
+  let confirmation = document.querySelector('.confirmation');
+  let confirmLabels = document.querySelector('.confirm-labels');
+
+  confirmLabels.innerHTML = '';
+
+  overlay.classList.add('show');
+  confirmation.classList.add('show');
+
+  for (const checkbox of allCheckbox) {
+    
+    let label = document.createElement('label');
+    label.classList.add('label');
+    label.classList.add('label-active');
+
+    if (checkbox.checked) {
+      label.innerText = checkbox.value < 10 ? '0' + checkbox.value : checkbox.value;
+      confirmLabels.appendChild(label);
+    }
+  }
+})
+
+document.querySelector('#btn-cancelar').addEventListener('click', function() {
+  document.querySelector('.overlay').classList.remove('show');
+  document.querySelector('.overlay').classList.add('hidden');
+  document.querySelector('.confirmation').classList.remove('show');
+  document.querySelector('.confirmation').classList.add('hidden');
 })
