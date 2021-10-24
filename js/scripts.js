@@ -98,8 +98,8 @@ function changeCheckbox(e) {
 
   let quantity = document.querySelector('input[name="qnt-numbers"]:checked').value;
   let restantes = document.querySelector('#restantes');
-
   let check = e.target;
+
   for (const label of checkLabels) {
 
     if (label.getAttribute('for') == check.id) {     
@@ -124,13 +124,32 @@ function changeCheckbox(e) {
       }
 
       if (marcados == quantity) {
+
+        enableButton(true);
+
         for (const checkbox of allCheckbox) {
           if(!checkbox.checked) {
             checkbox.setAttribute('disabled', '');
           }
         }
+
+      } else {
+        enableButton(false);
       }
-    }
+    } // fim if
+  } // fim for
+} // fim function
+
+function enableButton(checker) {
+  let button = document.querySelector('#btn-bet');
+  if (checker) {
+    button.removeAttribute('disabled');
+    button.classList.remove('btn-disabled');
+    button.classList.add('btn-enabled');
+  } else {
+    button.setAttribute('disabled', '');
+    button.classList.remove('btn-enabled');
+    button.classList.add('btn-disabled');
   }
 }
 
@@ -146,3 +165,8 @@ document.querySelector('#btn-next').addEventListener('click', function() {
   document.querySelector('#container-bet').classList.remove('hidden');
   document.querySelector('#restantes').innerText = `${quantity} restantes`;
 });
+
+
+document.querySelector('#btn-bet').addEventListener('click', function() {
+  alert('teste');
+})
